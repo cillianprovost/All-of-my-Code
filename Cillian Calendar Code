@@ -1,0 +1,94 @@
+txt = "Calendar"
+# Creates a title
+x = txt.title()
+print(x)
+
+
+# Cillian's Program
+# Y9 Design
+
+import calendar
+import datetime 
+from tkinter import *
+from tkinter import messagebox
+import tkinter as Tk
+
+root = Tk()
+root.title("Tk Reminder System")
+root.geometry("600x400")
+
+year = int(datetime.date.today().strftime("%Y"))  # year
+month = int(datetime.date.today().strftime("%m"))  # month number
+    
+# Add a grid
+mainframe = Frame(root)
+mainframe.grid(column=0,row=0, sticky=(N,W,E,S) )
+mainframe.columnconfigure(0, weight = 1)
+mainframe.rowconfigure(0, weight = 1)
+mainframe.pack(pady = 100, padx = 100)
+
+# Change dropdown 
+def change_dropdown(*args):
+    print(tkvar.get())
+    myLabel2.configure(text="", justify="right")
+
+# Send message
+def sendNotification():
+
+    cb1 = var1.get()
+    cb2 = var2.get()
+    ddm = tkvar.get()
+    
+    print("Checkbox1:" + str(cb1)) # For Homework: 0 means NO and 1 means YES
+    print("Checkbox2:" + str(cb2)) # For Tests: 0 means NO and 1 means YES
+    print("Time:" + str(ddm)) # This is the time that you have the test/homework
+    #print("Day of Week:" + str(ddm2))
+
+    if (cb1 == 0 and cb2 == 0):
+        messagebox.showinfo("Notification", "You have nothing due!")
+    elif (cb1 == 1 and cb2 == 0):
+        msg = "You have to do homework at: " + str(ddm)
+        messagebox.showinfo("Notification", msg)
+    elif (cb1 == 0 and cb2 == 1):
+        msg = "You have a test tomorrow at: " + str(ddm)
+        messagebox.showinfo("Notification", msg)
+    else:
+        messagebox.showinfo("Notification", "You have not scheduled any reminders!")
+
+# Creating a Tkinter variable
+var1 = IntVar()
+var2 = IntVar()
+tkvar = StringVar(root)
+tkvar.set('12:00') # the default option
+
+#  The options/the timer
+choices = ['5:30am','6:00am','6:30am','7:00am','7:30am','8:00am','8:30am','9:00am','9:30am','10:00am','10:30am','11:00am','11:30am','12:00pm','12:30pm','1:00pm','1:30pm','2:00pm','2:30pm','3:00pm', '3:30pm','4:00pm','4:30pm','5:00pm','5:30pm','6:00pm','6:30pm','7:00pm','7:30pm','8:00pm','8:30pm','9:00pm','9:30pm','10:00pm','10:30pm']
+
+# Create the Drop Down Menu and place it
+popupMenu = OptionMenu(mainframe, tkvar, *choices)
+popupMenu.grid(row = 0, column =0)
+
+# Create the Label and place it
+myLabel = Label(mainframe, text="Choose a time")
+myLabel.grid(row = 0, column = 1)
+
+myLabel2 = Label(mainframe, text="", font=("Courier New", 12))
+myLabel2.grid(row = 0, column = 2)
+
+myButton = Button(mainframe, text="Send Reminder", command=sendNotification)
+myButton.grid(row = 2, column = 1)
+
+# Checkbox setup
+# Checkbox 1
+myCB1 = Checkbutton(mainframe, text="Homework", variable=var1)
+myCB1.grid(row = 1, column = 1)
+
+# Checkbox setup
+# Checkbox 2
+myCB2 = Checkbutton(mainframe, text="Test", variable=var2)
+myCB2.grid(row = 1, column = 2)
+
+                                   
+tkvar.trace('w', change_dropdown)
+
+root.mainloop()
