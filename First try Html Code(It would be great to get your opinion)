@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Cillian Provost Human Inequalities
+		</title>
+		<style>
+		* {
+		box-sizing: border-box;
+		}
+
+		body {
+		font-family: "Roboto";
+		padding: 10px;
+		background: black;
+		}
+		
+		/* Header/Blog Title */
+		.header {
+		padding: 5px;
+		text-align: center;
+		background: black;
+		color: #A0E329;
+		}
+
+		#HI {
+		color: #E31E70;
+		}
+		
+		.header h1 {
+		font-size: 50px;
+		}
+
+		/* Styles the top navigation bar */
+		.topnav {
+		background-color: black;
+		padding: 50px;
+		margin-top: 20px;
+		border: 2px solid #A0E329; 
+
+		}
+
+		/* Styles the topnav links */
+		.topnav a {
+		float: left;
+		display: block;
+		color: #E31E70;
+		text-align: center;
+		padding: 4px 16px;
+		text-decoration: none;
+		}
+		
+		
+		/* Change color on hover */
+		.topnav a:hover {
+		background-color: #4D47F6;
+		color: #E8E0E0;
+		}
+
+		/* Create two unequal columns that floats next to each other */
+		/* Left column */
+		.leftcolumn {   
+		float: left;
+		width: 75%;
+		}
+
+		/* Right column */
+		.rightcolumn {
+		float: left;
+		width: 25%;
+		background-color: black;
+		padding-left: 20px;
+		}
+
+
+		/* Add a card effect for articles */
+		.card {
+		background-color: black;
+		padding: 20px;
+		color: white;
+		margin-top: 20px;
+		border: 2px solid #A0E329; 
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+
+
+		/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 800px) {
+		.leftcolumn, .rightcolumn {   
+		width: 100%;
+		padding: 0;
+		}
+		}
+
+		/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+		@media screen and (max-width: 400px) {
+		.topnav a {
+		float: none;
+		width: 100%;
+		}
+		}
+		</style>
+	</head>
+	<body>
+			
+				<div class="header">
+					<h1 id="HI">
+						Human Inequalites
+					</h1>
+					<p>
+						Let's make a difference!
+					</p>
+				</div>
+				<div class="topnav">
+					<a href="#What">What is it?</a> <a href="#Good">Good Countries</a> <a href="#Bad">Bad Countries</a> 
+				</div>
+				<div class="row">
+					<div class="leftcolumn">
+						<div class="card">
+							<h2 id="What">
+								What is it
+							</h2>
+							<img src="" width="400" height="300" alt="hi">
+							
+							<p>
+								You may ask yourself what are the Un Sdg's? Well Un sdg's are the goals That the United Nations created to make a better earth. The goal that I have chosen is goal ten Human Inequalites. This goal is devoted to improve the rights for people and the quality of their job. No slavery, good pay for jobs and no child labour are ome example s of what this goal is striding to. 
+							</p>
+						</div>
+						<div class="card">
+							<h2 id="Good">
+								Good Countries
+							</h2>
+							<h5>
+								The shining places!
+							</h5><img src="" width="263" height="263" alt="">
+							<p>
+								
+							</p>
+							<p>
+								There ar very few counties in the world that the United Nations see as good at dealing with human inequalities. Thes countries are Ukraine, Norway, Denmark, Finland, Iceland and Iraq. These countries are the countries showing their abiltiy to deal with problems. They are leading the charge of human rights across the world. These are the role models and countries that aren't greenshould copy their methods. 
+							</p>
+						</div>
+						<div class="card">
+							<h2 id="Bad">
+								Bad Countries
+							</h2>
+							<h5>
+								Creating a better future!
+							</h5><img src="" width="400" heig ht="235" alt="">
+							<p>
+								Some text..
+							</p>
+							<p>
+							Majority of the countries in the world are in the red on the scale of the Un Sdg. Some countries that could be improved are U.S.A, China, Russia, Mexico, Brazil and South africa. If these countries changed their ways the welleing of people could grow and help the world become a better place. 
+							</p>
+						</div>
+					</div>
+					<div class="rightcolumn">
+						<div class="card">
+							<h2>
+								Solutions
+							</h2><img src="" width="200" height="110" alt="">
+							<p>
+								Some text about me in culpa qui officia deserunt mollit anim..
+							</p>
+						</div>
+					</div>
+				</div>
+			</body>
+		</html>
